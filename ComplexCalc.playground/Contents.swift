@@ -146,6 +146,14 @@ let calc = Calculator()
 
 // ===== Your tests go here
 
+//negative number testing
+calc.subtract(lhs: 5, rhs: 10) == -5
+calc.multiply(lhs: -5, rhs: 6) == -30
+calc.multiply(lhs: 5, rhs: -6) == -30
+calc.divide(lhs: -10, rhs: 5) == -2
+calc.divide(lhs: 10, rhs: -5) == -2
+calc.divide(lhs: -10, rhs: -5) == 2
+
 //: ---
 //: ## Test code block
 //: Do not modify the code in this section
