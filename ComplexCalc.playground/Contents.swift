@@ -102,8 +102,32 @@ class Calculator {
         return op(lhs, rhs)
     }
     func mathOp(args: [Int], beg: Int, op: (Int, Int) -> Int) -> Int {
-        
+        var result = beg
+        for number in args {
+            result = op(result, number)
+        }
+        return result
     }
+    
+    func add(lhs: (Int, Int), rhs: (Int, Int)) -> (Int, Int) {
+        return (lhs.0 + rhs.0, lhs.1 + rhs.1)
+    }
+    
+    func subtract(lhs: (Int, Int), rhs: (Int, Int)) -> (Int, Int) {
+        return (lhs.0 - rhs.0, lhs.1 - rhs.1)
+    }
+
+    func add(lhs: [String: Int], rhs: [String: Int]) -> [String: Int] {
+        return ["x": lhs["x", default: 0] + rhs["x", default: 0],
+                "y": lhs["y", default: 0] + rhs["y", default: 0]]
+    }
+    
+    func subtract(lhs: [String: Int], rhs: [String: Int]) -> [String: Int] {
+        return ["x": lhs["x", default: 0] - rhs["x", default: 0],
+                "y": lhs["y", default: 0] - rhs["y", default: 0]]
+    }
+    
+    
     
     
 }
